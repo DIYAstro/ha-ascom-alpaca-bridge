@@ -1,0 +1,50 @@
+{
+    "title": "AscomAlpacaBridge",
+    "config": {
+        "step": {
+            "user": {
+                "title": "Setup AscomAlpacaBridge",
+                "description": "Choose a discovered ASCOM Alpaca server or select manual entry.",
+                "data": {
+                    "host": "Discovered Servers"
+                }
+            },
+            "manual": {
+                "title": "Manual Setup",
+                "description": "Enter the IP address and port of your ASCOM Alpaca server.",
+                "data": {
+                    "host": "IP Address",
+                    "port": "Port"
+                }
+            },
+            "select_devices": {
+                "title": "Select Devices",
+                "description": "Select which devices you want to add to Home Assistant.",
+                "data": {
+                    "devices": "Devices"
+                }
+            }
+        },
+        "error": {
+            "cannot_connect": "Failed to connect to the selected Alpaca server.",
+            "invalid_auth": "Invalid authentication.",
+            "no_devices_selected": "Please select at least one device.",
+            "unknown": "An unexpected error occurred."
+        },
+        "abort": {
+            "already_configured": "This ASCOM Alpaca server is already configured."
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "title": "Alpaca Bridge Options",
+                "description": "Configure integration settings.",
+                "data": {
+                    "scan_interval": "Polling interval (seconds)",
+                    "max_sensor_age": "Max. sensor age for weather stations (seconds)"
+                }
+            }
+        }
+    }
+}

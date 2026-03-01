@@ -1,0 +1,240 @@
+slew_to_coordinates:
+  name: Slew to Coordinates (RA/Dec)
+  description: Slew the telescope to the given equatorial coordinates.
+  fields:
+    ra:
+      name: Right Ascension
+      description: Right Ascension in hours (0-24)
+      required: true
+      example: 5.5
+      selector:
+        number:
+          min: 0
+          max: 24
+          step: 0.001
+          unit_of_measurement: "h"
+    dec:
+      name: Declination
+      description: Declination in degrees (-90 to 90)
+      required: true
+      example: 45.0
+      selector:
+        number:
+          min: -90
+          max: 90
+          step: 0.001
+          unit_of_measurement: "°"
+
+slew_to_alt_az:
+  name: Slew to Alt/Az
+  description: Slew the telescope to the given horizontal coordinates.
+  fields:
+    alt:
+      name: Altitude
+      description: Altitude in degrees (0-90)
+      required: true
+      example: 60.0
+      selector:
+        number:
+          min: 0
+          max: 90
+          step: 0.01
+          unit_of_measurement: "°"
+    az:
+      name: Azimuth
+      description: Azimuth in degrees (0-360)
+      required: true
+      example: 180.0
+      selector:
+        number:
+          min: 0
+          max: 360
+          step: 0.01
+          unit_of_measurement: "°"
+
+rotator_move:
+  name: Rotator Move Relative
+  description: Move the rotator by the given relative amount.
+  fields:
+    position:
+      name: Position
+      description: Angle to move in degrees
+      required: true
+      example: 10.0
+      selector:
+        number:
+          step: 0.1
+          mode: box
+
+rotator_sync:
+  name: Rotator Sync
+  description: Sync the rotator to the given angle without moving it.
+  fields:
+    position:
+      name: Position
+      description: Angle to sync to in degrees (0-360)
+      required: true
+      example: 180.0
+      selector:
+        number:
+          min: 0
+          max: 360
+          step: 0.1
+          unit_of_measurement: "°"
+
+focuser_move:
+  name: Focuser Move
+  description: Move the focuser to the given absolute position, or by the given relative amount (depending on the focuser capabilities).
+  fields:
+    position:
+      name: Position
+      description: Steps to move (int)
+      required: true
+      example: 1000
+      selector:
+        number:
+          step: 1
+          mode: box
+
+dome_slew_az:
+  name: Dome Slew to Azimuth
+  description: Slew the dome to the given azimuth (0-360).
+  fields:
+    azimuth:
+      name: Azimuth
+      description: Target Azimuth in degrees
+      required: true
+      example: 180.0
+      selector:
+        number:
+          min: 0
+          max: 360
+          step: 0.1
+          unit_of_measurement: "°"
+
+dome_slew_alt:
+  name: Dome Slew to Altitude
+  description: Slew the dome to the given altitude (0-90).
+  fields:
+    altitude:
+      name: Altitude
+      description: Target Altitude in degrees
+      required: true
+      example: 45.0
+      selector:
+        number:
+          min: 0
+          max: 90
+          step: 0.1
+          unit_of_measurement: "°"
+
+dome_sync_az:
+  name: Dome Sync Azimuth
+  description: Sync the dome's reported azimuth to a new value without moving.
+  fields:
+    azimuth:
+      name: Azimuth
+      description: Sync Azimuth in degrees
+      required: true
+      example: 180.0
+      selector:
+        number:
+          min: 0
+          max: 360
+          step: 0.1
+          unit_of_measurement: "°"
+
+camera_start_exposure:
+  name: Camera Start Exposure
+  description: Start an exposure on the primary camera.
+  fields:
+    duration:
+      name: Duration
+      description: Exposure duration in seconds
+      required: true
+      example: 60.0
+      selector:
+        number:
+          min: 0.001
+          max: 3600
+          step: 0.001
+          unit_of_measurement: "s"
+    light:
+      name: Light Frame
+      description: True for Light frame (shutter open), False for Dark frame.
+      required: false
+      example: true
+      default: true
+      selector:
+        boolean: {}
+
+camera_pulseguide:
+  name: Camera Pulse Guide
+  description: Send a pulse guide command to the camera's ST-4 port.
+  fields:
+    direction:
+      name: Direction
+      description: Guide direction (0=North, 1=South, 2=East, 3=West)
+      required: true
+      example: 0
+      selector:
+        number:
+          min: 0
+          max: 3
+          step: 1
+    duration:
+      name: Duration
+      description: Pulse duration in milliseconds
+      required: true
+      example: 1000
+      selector:
+        number:
+          min: 1
+          max: 30000
+          step: 1
+          unit_of_measurement: "ms"
+
+camera_set_roi:
+  name: "Camera Set ROI"
+  description: "Sets the Region of Interest (startX, startY, numX, numY) atomically."
+  fields:
+    start_x:
+      name: "Start X"
+      description: "X offset of the subframe."
+      required: true
+      example: 0
+      selector:
+        number:
+          min: 0
+          max: 10000
+          step: 1
+    start_y:
+      name: "Start Y"
+      description: "Y offset of the subframe."
+      required: true
+      example: 0
+      selector:
+        number:
+          min: 0
+          max: 10000
+          step: 1
+    num_x:
+      name: "Width"
+      description: "Width of the subframe."
+      required: true
+      example: 1000
+      selector:
+        number:
+          min: 1
+          max: 10000
+          step: 1
+    num_y:
+      name: "Height"
+      description: "Height of the subframe."
+      required: true
+      example: 1000
+      selector:
+        number:
+          min: 1
+          max: 10000
+          step: 1

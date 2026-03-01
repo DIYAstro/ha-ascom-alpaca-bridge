@@ -1,0 +1,19 @@
+{
+  "domain": "ascom_alpaca_bridge",
+  "name": "ASCOM Alpaca Bridge",
+  "codeowners": [
+    "@DIYAstro",
+    "@DiMoGro1"
+  ],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/DIYAstro/ha-ascom-alpaca-bridge",
+  "homeassistant": "2026.2.0",
+  "integration_type": "device",
+  "iot_class": "local_polling",
+  "requirements": [
+    "aiohttp",
+    "Pillow>=10.0.0"
+  ],
+  "version": "0.9.0"
+}
