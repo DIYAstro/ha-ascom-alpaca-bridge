@@ -2,7 +2,7 @@
 
 Home Assistant integration for monitoring and basic control of astronomical equipment via the ASCOM Alpaca protocol.
 
-![Alpaca Bridge Logo](custom_components/ascom_alpaca_bridge/icon@2x.png)
+![Alpaca Bridge Logo](custom_components/ascom_alpaca_bridge/brand/icon@2x.png)
 
 
 > [!IMPORTANT]
