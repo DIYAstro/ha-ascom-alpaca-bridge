@@ -1,9 +1,9 @@
 {
-    "title": "AscomAlpacaBridge",
+    "title": "ASCOM Alpaca Bridge",
     "config": {
         "step": {
             "user": {
-                "title": "AscomAlpacaBridge einrichten",
+                "title": "ASCOM Alpaca Bridge einrichten",
                 "description": "Wähle einen gefundenen ASCOM Alpaca Server oder wähle manuelle Eingabe.",
                 "data": {
                     "host": "Gefundene Server"

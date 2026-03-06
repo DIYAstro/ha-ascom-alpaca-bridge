@@ -1,4 +1,4 @@
-"""Constants for the AscomAlpacaBridge integration."""
+"""Constants for the ASCOM Alpaca Bridge integration."""
 from datetime import timedelta
 import logging
 
